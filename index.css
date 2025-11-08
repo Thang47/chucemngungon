@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #2b1d75, #4b63c2);
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 48px;
+  text-shadow: 0 0 20px rgba(255, 192, 203, 0.8);
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 22px;
+  margin-bottom: 50px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Trái tim mịn, sáng, ở giữa */
+.heart {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(45deg, #ff3366, #ff4b8d);
+  transform: rotate(-45deg);
+  animation: heartbeat 1.4s infinite;
+  margin: 0 auto;
+  border-radius: 30% 30% 10% 10%;
+  box-shadow: 0 0 40px rgba(255, 0, 76, 0.4);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(45deg, #ff3366, #ff4b8d);
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -60px;
+  left: 0;
+}
+
+.heart::after {
+  left: 60px;
+  top: 0;
+}
+
+/* Hiệu ứng đập tim mềm mại */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1) rotate(-45deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(-45deg);
+  }
+  50% {
+    transform: scale(0.95) rotate(-45deg);
+  }
+  75% {
+    transform: scale(1.05) rotate(-45deg);
+  }
+}
